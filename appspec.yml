@@ -19,9 +19,9 @@ permissions:
 hooks:
   AfterInstall:
     - location: ops/install_deps.sh
-      timeout: 180    
+      timeout: 600
     - location: ops/install_app.sh
-      timeout: 180
+      timeout: 300
       runas: app
   ApplicationStart:
     - location: ops/start_app.sh
