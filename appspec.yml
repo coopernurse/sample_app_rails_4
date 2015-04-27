@@ -17,6 +17,8 @@ permissions:
     type:
       - file
 hooks:
+  BeforeInstall:
+    - location: ops/stop_app.sh
   AfterInstall:
     - location: ops/install_deps.sh
       timeout: 600
