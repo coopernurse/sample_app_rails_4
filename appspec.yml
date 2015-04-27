@@ -27,3 +27,5 @@ hooks:
     - location: ops/start_app.sh
       timeout: 180
       runas: app
+  ValidateService:
+    - location: ops/verify_app.sh
