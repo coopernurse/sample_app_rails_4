@@ -18,7 +18,10 @@ permissions:
       - file
 hooks:
   BeforeInstall:
+    - location: ops/deregister_from_elb.sh
+      timeout: 300
     - location: ops/stop_app.sh
+      timeout: 60
   AfterInstall:
     - location: ops/install_deps.sh
       timeout: 600
@@ -31,3 +34,5 @@ hooks:
       runas: app
   ValidateService:
     - location: ops/verify_app.sh
+    - location: ops/register_with_elb.sh
+      timeout: 300
